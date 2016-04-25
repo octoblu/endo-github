@@ -24,7 +24,7 @@ run_server(){
     ENDO_GITHUB_OCTOBLU_CLIENT_SECRET="$OCTOBLU_CLIENT_SECRET" \
     ENDO_GITHUB_OCTOBLU_OAUTH_URL="$OCTOBLU_OAUTH_URL" \
     ENDO_GITHUB_GITHUB_CLIENT_ID="$GITHUB_CLIENT_ID" \
-    ENDO_GITHUB_GITHUB_CLIENT_SECRET="$GITHUB_CLIENT_SECRET"
+    ENDO_GITHUB_GITHUB_CLIENT_SECRET="$GITHUB_CLIENT_SECRET" \
     ENDO_GITHUB_SERVICE_URL="$SERVICE_URI" \
     MESHBLU_SERVER="meshblu.octoblu.com" \
     MESHBLU_PORT="443" \
@@ -38,16 +38,17 @@ run_server(){
 
 run_yo(){
   local skip_install="$1"
-  local args=""
+  local args=" --skip_install "
 
-  if [ "$skip_install" == "true" ]; then
-    args+=" --skip_install "
+
+  if [ "$skip_install" == "false" ]; then
+    args=""
   fi
 
   yo endo \
-    --github-user octoblu \
     --force \
-    "$args"
+    --github-user octoblu \
+    $args
 }
 
 main(){
@@ -56,6 +57,5 @@ main(){
   run_yo "$skip_install" \
   && run_mocha \
   && run_server
-
 }
 main $@
