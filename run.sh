@@ -54,23 +54,11 @@ run_yo(){
     $args
 }
 
-remove_lib_files() {
-  rm -rf src/config-generators
-  rm -rf src/controllers
-  rm -rf src/models
-  rm -rf src/services
-  rm src/strategies/octoblu-strategy.coffee
-  rm src/router.coffee
-  rm src/server.coffee
-  rm endo-message-schema.json
-}
-
 main(){
   local debug="$DEBUG"
   local skip_install="$SKIP_INSTALL"
 
   run_yo "$skip_install" \
-  && remove_lib_files \
   && run_mocha \
   && run_server "$debug"
 }
