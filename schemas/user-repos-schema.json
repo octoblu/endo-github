@@ -1,0 +1,9 @@
+{
+  "title": "User Repos",
+  "type": "object",
+  "properties": {
+    "greeting": {
+      "type": "string"
+    }
+  }
+}
