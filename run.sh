@@ -3,6 +3,7 @@
 MESHBLU_UUID='e4c93a90-e12b-4947-b48f-ebc4237aad41'
 MESHBLU_TOKEN='733f7373d3139716747630cad6e5ec2fbecaf6b6'
 OCTOBLU_OAUTH_URL='http://oauth.octoblu.dev'
+APP_OCTOBLU_HOST='http://app.octoblu.dev'
 
 GITHUB_CLIENT_ID='e73058c4bf7c9cb95007'
 GITHUB_CLIENT_SECRET='8479e154df17ad2ddc4aa835618171ceb10ded08'
@@ -24,6 +25,7 @@ run_server(){
   local debug="$1"
 
   env \
+    APP_OCTOBLU_HOST="$APP_OCTOBLU_HOST" \
     DEBUG="$debug" \
     ENDO_OCTOBLU_OAUTH_URL="$OCTOBLU_OAUTH_URL" \
     ENDO_GITHUB_GITHUB_CLIENT_ID="$GITHUB_CLIENT_ID" \
@@ -60,9 +62,9 @@ main(){
   local debug="$DEBUG"
   local skip_install="$SKIP_INSTALL"
 
-  run_yo "$skip_install" \
-  && run_mocha \
-  && run_server "$debug"
-  # run_server "$debug"
+  # run_yo "$skip_install" \
+  # && run_mocha \
+  # && run_server "$debug"
+  run_server "$debug"
 }
 main $@
