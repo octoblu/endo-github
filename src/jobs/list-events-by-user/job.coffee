@@ -26,10 +26,10 @@ class ListEventsByUser
     {
       type:        result.type
       username:    result.actor.display_login
-      repo_name:   result.repo.name
-      commit_ref:  result.payload.ref
-      commit_sha:  result.payload.head
-      created_at:  result.created_at
+      repoName:   result.repo.name
+      commitRef:  result.payload.ref
+      commitSha:  result.payload.head
+      createdAt:  result.created_at
       description: result.payload.description
     }
 

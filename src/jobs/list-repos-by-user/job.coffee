@@ -25,11 +25,11 @@ class ListReposByUser
   _processResult: (result) =>
     {
       type:             result.type
-      repo_name:        result.full_name
-      watchers_count:   result.watchers_count
-      stargazers_count: result.stargazers_count
-      forks_count:      result.forks_count
-      open_issues:      result.open_issues
+      repoName:         result.full_name
+      watchersCount:    result.watchers_count
+      stargazersCount:  result.stargazers_count
+      forksCount:       result.forks_count
+      openIssues:       result.open_issues
     }
 
   _processResults: (results) =>
