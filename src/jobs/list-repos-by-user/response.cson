@@ -1,1 +1,14 @@
-{}
+{
+  type: 'object'
+  required: ['metadata', 'data']
+  properties:
+    data:
+      type: 'array'
+      items:
+        type: 'object'
+        required: ['repoName']
+        properties:
+          repoName:
+            type: 'string'
+            description: 'Full repository name including organization (ex: "octoblu/node-meshblu-socket-io")'
+}

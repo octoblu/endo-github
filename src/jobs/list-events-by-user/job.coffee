@@ -24,13 +24,13 @@ class ListEventsByUser
 
   _processResult: (result) =>
     {
-      type:        result.type
-      username:    result.actor.display_login
-      repoName:   result.repo.name
       commitRef:  result.payload.ref
       commitSha:  result.payload.head
       createdAt:  result.created_at
       description: result.payload.description
+      repoName:   result.repo.name
+      type:        result.type
+      username:    result.actor.display_login
     }
 
   _processResults: (results) =>
