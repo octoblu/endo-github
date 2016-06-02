@@ -2,7 +2,7 @@ Github = require 'github'
 http   = require 'http'
 _      = require 'lodash'
 
-class GetUserEvents
+class ListReposByUser
   constructor: ({@encrypted}) ->
     console.log '@encrypted', JSON.stringify @encrypted
     @github = new Github
@@ -13,7 +13,7 @@ class GetUserEvents
   do: ({data}, callback) =>
     return callback @_userError(422, 'data.username is required') unless data.username?
 
-    @github.activity.getEventsForUser {user: data.username}, (error, results) =>
+    @github.repos.getForUser {user: data.username}, (error, results) =>
       return callback error if error?
       return callback null, {
         metadata:
@@ -24,13 +24,12 @@ class GetUserEvents
 
   _processResult: (result) =>
     {
-      type:        result.type
-      username:    result.actor.display_login
-      repo_name:   result.repo.name
-      commit_ref:  result.payload.ref
-      commit_sha:  result.payload.head
-      created_at:  result.created_at
-      description: result.payload.description
+      type:             result.type
+      repo_name:        result.full_name
+      watchers_count:   result.watchers_count
+      stargazers_count: result.stargazers_count
+      forks_count:      result.forks_count
+      open_issues:      result.open_issues
     }
 
   _processResults: (results) =>
@@ -41,4 +40,4 @@ class GetUserEvents
     error.code = code
     return error
 
-module.exports = GetUserEvents
+module.exports = ListReposByUser

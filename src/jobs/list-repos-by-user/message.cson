@@ -1,7 +1,7 @@
 {
   type: 'object'
-  title: 'Get User Events'
-  'x-group-name': 'User Events'
+  title: 'List Repos by User'
+  'x-group-name': 'Repos'
   required: ['metadata', 'data']
   properties:
     data:
