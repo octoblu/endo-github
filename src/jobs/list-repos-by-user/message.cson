@@ -2,7 +2,7 @@
   type: 'object'
   title: 'List Repos by User'
   'x-group-name': 'Repos'
-  required: ['metadata', 'data']
+  required: ['data']
   properties:
     data:
       type: 'object'
