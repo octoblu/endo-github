@@ -9,6 +9,7 @@ class ListReposByUser
 
 
   do: ({data}, callback) =>
+    return callback @_userError(422, 'data is required') unless data?
     return callback @_userError(422, 'data.username is required') unless data.username?
 
     @github.repos.getForUser {user: data.username}, (error, results) =>
