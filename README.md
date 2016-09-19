@@ -1,10 +1,13 @@
 # endo-github
 
+[![Build Status](https://travis-ci.org/octoblu/endo-github.svg?branch=master)](https://travis-ci.org/octoblu/endo-github)
+[![Test Coverage](https://codecov.io/gh/octoblu/endo-github/branch/master/graph/badge.svg)](https://codecov.io/gh/octoblu/endo-github)
 [![Dependency status](http://img.shields.io/david/octoblu/endo-github.svg?style=flat)](https://david-dm.org/octoblu/endo-github)
 [![devDependency Status](http://img.shields.io/david/dev/octoblu/endo-github.svg?style=flat)](https://david-dm.org/octoblu/endo-github#info=devDependencies)
-[![Build Status](http://img.shields.io/travis/octoblu/endo-github.svg?style=flat&branch=master)](https://travis-ci.org/octoblu/endo-github)
+[![Slack Status](http://community-slack.octoblu.com/badge.svg)](http://community-slack.octoblu.com)
 
 [![NPM](https://nodei.co/npm/endo-github.svg?style=flat)](https://npmjs.org/package/endo-github)
+
 
 ## Installing
 

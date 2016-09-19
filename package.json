@@ -16,11 +16,12 @@
   },
   "scripts": {
     "start": "node command.js",
-    "test": "mocha"
+    "test": "istanbul cover _mocha -- -R spec --require coffee-coverage/register-istanbul && mocha --reporter json > coverage/mocha.json"
   },
   "devDependencies": {
     "@octoblu/shmock": "^0.7.2",
     "chai": "^3.5.0",
+    "coffee-coverage": "^1.0.1",
     "istanbul": "^0.4.4",
     "mocha": "^2.3.4",
     "mocha-istanbul": "^0.3.0",
