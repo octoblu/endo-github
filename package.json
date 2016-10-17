@@ -1,6 +1,6 @@
 {
   "name": "endo-github",
-  "version": "7.2.3",
+  "version": "7.2.4",
   "description": "Put some description here",
   "keywords": [],
   "homepage": "https://github.com/octoblu/github",
@@ -30,7 +30,7 @@
     "nyc": "^8.3.0",
     "passport-strategy": "^1.0.0",
     "request": "^2.74.0",
-    "sinon": "^1.17.5",
+    "sinon": "^1.17.2",
     "sinon-chai": "^2.8.0"
   },
   "dependencies": {
